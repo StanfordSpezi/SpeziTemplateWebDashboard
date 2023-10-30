@@ -24,7 +24,6 @@ jobs:
     name: ESLint
     uses: StanfordBDHG/.github/.github/workflows/eslint.yml@eslintpermissions
     permissions:
-      pull-requests: write
       checks: write
   testandcoverage:
     name: Test and Coverage
