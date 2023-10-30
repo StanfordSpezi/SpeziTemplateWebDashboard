@@ -20,14 +20,14 @@
       }
     ],
     "paths": {
-      "@stanfordbdhg/example-package": ["./packages/example-package/dist"]
+      "@stanfordspezi/example-package": ["./packages/example-package/dist"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"],
   "typedocOptions": {
     "entryPoints": ["packages/*"],
-    "name": "Stanford Biodesign Digital Health Next.js Template",
+    "name": "Stanford Spezi Template Web Dashboard",
     "entryPointStrategy": "packages",
     "includeVersion": false
   }

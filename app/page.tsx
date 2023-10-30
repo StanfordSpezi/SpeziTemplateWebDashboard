@@ -1,5 +1,5 @@
 //
-// This source file is part of the Stanford Biodesign Digital Health Next.js Template open-source project
+// This source file is part of the Stanford Spezi Template Web Dashboard open-source project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University and the project authors (see CONTRIBUTORS.md)
 //
@@ -7,7 +7,7 @@
 //
 
 import Image from 'next/image'
-import { generateGreeting } from '@stanfordbdhg/example-package'
+import { generateGreeting } from '@stanfordspezi/example-package'
 
 export default function Home() {
   const greeting = generateGreeting()
@@ -15,10 +15,10 @@ export default function Home() {
   return (
     <div className="container">
       <Image
-        src={`${process.env.basePath || ''}/stanfordbiodesign.png`}
-        alt="Stanford Biodesign Logo"
-        width={634}
-        height={235}
+        src={`${process.env.basePath || ''}/stanfordspezi.png`}
+        alt="Stanford Spezi Logo"
+        width={200}
+        height={200}
       />
       <h1>{`${greeting.message} to the ${greeting.project}`}</h1>
     </div>

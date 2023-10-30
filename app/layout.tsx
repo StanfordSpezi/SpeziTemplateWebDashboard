@@ -1,5 +1,5 @@
 //
-// This source file is part of the Stanford Biodesign Digital Health Next.js Template open-source project
+// This source file is part of the Stanford Spezi Template Web Dashboard open-source project
 //
 // SPDX-FileCopyrightText: 2023 Stanford University and the project authors (see CONTRIBUTORS.md)
 //
@@ -11,8 +11,8 @@ import type { ReactNode } from 'react'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Next.js Template',
-  description: 'Stanford Biodesign Digital Health Next.js Template',
+  title: 'Stanford Spezi Template Web Dashboard',
+  description: 'Stanford Spezi Template Web Dashboard',
 }
 
 interface RootLayoutProps {

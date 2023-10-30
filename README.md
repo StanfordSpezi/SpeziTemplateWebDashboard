@@ -1,6 +1,6 @@
 <!--
 
-This source file is part of the Stanford Biodesign Digital Health Next.js Template open-source project
+This source file is part of the Stanford Spezi Template Web Dashboard open-source project
 
 SPDX-FileCopyrightText: 2023 Stanford University and the project authors (see CONTRIBUTORS.md)
 
@@ -8,26 +8,25 @@ SPDX-License-Identifier: MIT
 
 -->
 
-# Biodesign Digital Health Next.js Template
+# Stanford Spezi Template Web Dashboard
 
-[![Build and Test](https://github.com/StanfordBDHG/NextJSTemplate/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/StanfordBDHG/NextJSTemplate/actions/workflows/build-and-test.yml)
-[![Deployment](https://github.com/StanfordBDHG/NextJSTemplate/actions/workflows/main.yml/badge.svg)](https://github.com/StanfordBDHG/NextJSTemplate/actions/workflows/main.yml)
-[![codecov](https://codecov.io/gh/StanfordBDHG/NextJSTemplate/graph/badge.svg?token=dfQW5eZ2up)](https://codecov.io/gh/StanfordBDHG/NextJSTemplate)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10052055.svg)](https://doi.org/10.5281/zenodo.10052055)
+[![Build and Test](https://github.com/StanfordSpezi/SpeziTemplateWebDashboard/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/StanfordSpezi/SpeziTemplateWebDashboard/actions/workflows/build-and-test.yml)
+[![Deployment](https://github.com/StanfordSpezi/SpeziTemplateWebDashboard/actions/workflows/main.yml/badge.svg)](https://github.com/StanfordSpezi/SpeziTemplateWebDashboard/actions/workflows/main.yml)
+[![codecov](https://codecov.io/gh/StanfordSpezi/SpeziTemplateWebDashboard/graph/badge.svg?token=dfQW5eZ2up)](https://codecov.io/gh/StanfordSpezi/SpeziTemplateWebDashboard)
 
 ## How To Use This Template
 
-The template repository contains a template for a Next.js project providing automated GitHub Actions and setups for code linting, testing & test coverage reports, docker deployments, a docker compose setup, local packages for modular deployment, and documentation generation & deployment.
+The template repository contains a template for a Stanford Spezi web dashboard project providing automated GitHub Actions and setups for code linting, testing & test coverage reports, docker deployments, a docker compose setup, local packages for modular deployment, and documentation generation & deployment.
 
 Follow these steps to customize it to your needs:
 
-1. Rename the Next.js project.
+1. Rename the Stanford Spezi Template Web Dashboard project.
 2. Modify, add, or remove the local packages found at `/packages/*` to separate code into smaller modules.
 3. Add dependencies and edit the project in `/app` and the local Node packages.
 
-The main application is automatically deployed to https://stanfordbdhg.github.io/NextJSTemplate/.
+The main application is automatically deployed to https://stanfordspezi.github.io/SpeziTemplateWebDashboard/.
 
-The documentation of the local packages is automatically deployed to https://stanfordbdhg.github.io/NextJSTemplate/docs.
+The documentation of the local packages is automatically deployed to https://stanfordspezi.github.io/SpeziTemplateWebDashboard/docs.
 
 ## Getting Started
 
@@ -73,12 +72,12 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## License
 
-This project is licensed under the MIT License. See [Licenses](https://github.com/StanfordBDHG/NextJSTemplate/tree/main/LICENSES) for more information.
+This project is licensed under the MIT License. See [Licenses](https://github.com/StanfordSpezi/SpeziTemplateWebDashboard/tree/main/LICENSES) for more information.
 
 ## Contributors
 
 This project is developed as part of the Stanford Byers Center for Biodesign at Stanford University.
-See [CONTRIBUTORS.md](https://github.com/StanfordBDHG/NextJSTemplate/tree/main/CONTRIBUTORS.md) for a full list of all Next.js Template contributors.
+See [CONTRIBUTORS.md](https://github.com/StanfordSpezi/SpeziTemplateWebDashboard/tree/main/CONTRIBUTORS.md) for a full list of all Stanford Spezi Template Web Dashboard contributors.
 
-![Stanford Byers Center for Biodesign Logo](https://raw.githubusercontent.com/StanfordBDHG/.github/main/assets/biodesign-footer-light.png#gh-light-mode-only)
-![Stanford Byers Center for Biodesign Logo](https://raw.githubusercontent.com/StanfordBDHG/.github/main/assets/biodesign-footer-dark.png#gh-dark-mode-only)
+![Spezi Footer](https://raw.githubusercontent.com/StanfordSpezi/.github/main/assets/FooterLight.png#gh-light-mode-only)
+![Spezi Footer](https://raw.githubusercontent.com/StanfordSpezi/.github/main/assets/FooterDark.png#gh-dark-mode-only)
