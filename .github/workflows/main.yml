@@ -34,4 +34,5 @@ jobs:
     with:
       imageName: stanfordspezi/spezitemplatewebdashboard
     permissions:
+      contents: read
       packages: write
