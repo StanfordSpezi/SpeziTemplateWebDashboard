@@ -25,9 +25,7 @@ describe('Home Component', () => {
   it('renders the Stanford Spezi Logo', () => {
     const { getByAltText } = render(<Home />)
 
-    const imageElement = getByAltText(
-      'Stanford Spezi Logo',
-    ) as HTMLImageElement
+    const imageElement = getByAltText('Stanford Spezi Logo') as HTMLImageElement
 
     expect(imageElement).toBeInTheDocument()
     expect(imageElement.src).toContain('stanfordspezi.png')
