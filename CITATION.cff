@@ -1,5 +1,5 @@
 #
-# This source file is part of the Stanford Biodesign Digital Health Next.js Template open-source project
+# This source file is part of the Stanford Spezi Template Web Dashboard open-source project
 #
 # SPDX-FileCopyrightText: 2023 Stanford University and the project authors (see CONTRIBUTORS.md)
 #
@@ -12,6 +12,5 @@ authors:
   - family-names: 'Schmiedmayer'
     given-names: 'Paul'
     orcid: 'https://orcid.org/0000-0002-8607-9148'
-title: 'NextJSTemplate'
-doi: '10.5281/zenodo.10052055'
-url: 'https://github.com/StanfordBDHG/NextJSTemplate'
+title: 'Stanford Spezi Template Web Dashboard'
+url: 'https://github.com/StanfordSpezi/SpeziTemplateWebDashboard'

@@ -1,15 +1,15 @@
 {
-  "name": "nextjstemplate",
+  "name": "templatewebdashboard",
   "version": "0.1.0",
   "license": "MIT",
-  "description": "Stanford Biodesign Digital Health Next.js Template",
+  "description": "Stanford Spezi Template Web Dashboard",
   "keywords": [
     "Stanford",
     "Biodesign"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/StanfordBDHG/NextJSTemplate"
+    "url": "https://github.com/StanfordSpezi/SpeziTemplateWebDashboard"
   },
   "private": true,
   "scripts": {
@@ -26,7 +26,7 @@
     "docs:ci": "typedoc --out ./out/docs --githubPages true"
   },
   "dependencies": {
-    "@stanfordbdhg/example-package": "file:../packages/example-package",
+    "@stanfordspezi/example-package": "file:../packages/example-package",
     "next": "^14",
     "react": "^18",
     "react-dom": "^18",
