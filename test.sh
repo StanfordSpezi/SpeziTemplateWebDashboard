@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# This source file is part of the Stanford OwnYourData Application project
+# This source file is part of the Stanford Spezi Template Web Dashboard open-source project
 #
 # SPDX-FileCopyrightText: 2023 Stanford University
 #
