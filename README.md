@@ -24,9 +24,9 @@ Follow these steps to customize it to your needs:
 2. Modify, add, or remove the local packages found at `/packages/*` to separate code into smaller modules.
 3. Add dependencies and edit the project in `/app` and the local Node packages.
 
-The main application is automatically deployed to https://stanforspezi.github.io/SpeziTemplateWebDashboard/.
+The main application is automatically deployed to https://stanforspezi.github.io/SpeziTemplateWebDashboard/.<!-- markdown-link-check-disable-line -->
 
-The documentation of the local packages is automatically deployed to https://stanfordspezi.github.io/SpeziTemplateWebDashboard/docs.
+The documentation of the local packages is automatically deployed to https://stanfordspezi.github.io/SpeziTemplateWebDashboard/docs.<!-- markdown-link-check-disable-line -->
 
 ## Getting Started
 
