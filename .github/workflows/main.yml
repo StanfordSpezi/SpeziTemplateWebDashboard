@@ -25,6 +25,7 @@ jobs:
     needs: buildandtest
     uses: StanfordBDHG/.github/.github/workflows/nextjs-github-pages.yml@v2
     permissions:
+      contents: read
       pages: write
       id-token: write
   dockerimage:
