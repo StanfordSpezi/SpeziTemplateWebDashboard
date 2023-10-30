@@ -18,6 +18,8 @@ jobs:
   buildandtest:
     name: Build and Test
     uses: ./.github/workflows/build-and-test.yml
+    permissions:
+      checks: write
   nextjsgithubpages:
     name: Deploy Next.js site to GitHub Pages
     needs: buildandtest
