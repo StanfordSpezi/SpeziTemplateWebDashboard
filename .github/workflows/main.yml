@@ -33,3 +33,5 @@ jobs:
     uses: StanfordBDHG/.github/.github/workflows/docker-build-and-push.yml@v2
     with:
       imageName: stanfordspezi/spezitemplatewebdashboard
+    permissions:
+      packages: write
