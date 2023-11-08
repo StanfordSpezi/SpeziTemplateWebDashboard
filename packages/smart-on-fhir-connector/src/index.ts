@@ -18,6 +18,10 @@
 
 import Client from "fhirclient/lib/Client";
 import { Medication, Coding, Practitioner, Patient } from 'fhir/r4';
+import Launcher from "./Launcher"
+
+export {Launcher};
+
 
 export const getAllResources = async (client: Client) => {
     const resourceBundle = await client.request(`/Patient/${client.patient.id}/$everything`,
