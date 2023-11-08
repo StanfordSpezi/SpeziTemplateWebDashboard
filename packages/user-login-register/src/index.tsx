@@ -12,7 +12,7 @@
  */
 
 /**
- * Docs for `createLoginRegister` function.
+ * Docs for `UserLoginRegister` function.
  */
 
 
