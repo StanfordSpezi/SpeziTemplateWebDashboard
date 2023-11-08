@@ -6,23 +6,33 @@
 // SPDX-License-Identifier: MIT
 //
 
-import Image from 'next/image'
-import { generateGreeting } from '@stanfordspezi/example-package'
-import Header from './components/Header'
+import Head from 'next/head';
+import {UserLoginRegister, AuthProvider} from '@stanfordspezi/user-login-register'
+// import styles from '../styles/Home.module.css';
+import { Typography, Stack } from '@mui/material';
 
 export default function Home() {
-  const greeting = generateGreeting()
-
   return (
-    <div className="container">
-      <Header></Header>
-      <Image
-        src={`${process.env.basePath || ''}/stanfordspezi.png`}
-        alt="Stanford Spezi Logo"
-        width={200}
-        height={200}
-      />
-      <h1>{`${greeting.message} to the ${greeting.project}`}</h1>
+    <div>
+      <AuthProvider>
+        <Head>
+          <title>Spezi Dashboard Template</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <main>
+          <Stack spacing={3}>
+            <Typography variant="h4" sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }} >
+              Welcome to your Dashboard!
+            </Typography>
+            <UserLoginRegister includeGoogle="true"></UserLoginRegister>
+          </Stack>
+        </main>
+      </AuthProvider>
+
     </div>
-  )
+  );
 }

@@ -21,7 +21,7 @@ const Loading = () => {
                 <br />
                 <h2>Spezi</h2>
                 <br />
-                <h4 className="lead">Loading SMART dashboard...</h4>
+                <h4 className="lead">Loading Spezi dashboard...</h4>
                 <br />
                 <Spinner animation="border" role="status" />
             </div>

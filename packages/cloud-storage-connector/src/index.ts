@@ -24,7 +24,7 @@ import { db } from './firebase';
  * data loading.
  */
 export interface PatientInfo {
-    patients: Patient[]
+    patientList: Patient[]
     loading: boolean
   }
 // edit fields if needed
@@ -66,6 +66,6 @@ export function extractPatientsFromFirebase(): PatientInfo {
       getPatients();
   }, [])
 
-   return {patients: patientList, loading: loading};
+   return {patientList: patientList, loading: loading};
 }
 

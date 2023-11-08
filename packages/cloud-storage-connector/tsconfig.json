@@ -6,7 +6,7 @@
     "declaration": true,
     "declarationMap": true
   },
-  "include": ["src"],
+  "include": ["src", "src/firebase.ts"],
   "typedocOptions": {
     "includeVersion": true,
     "entryPoints": ["src/index.ts"]

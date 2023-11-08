@@ -6,7 +6,7 @@ import {
    sendPasswordResetEmail,
 } from 'firebase/auth';
 
-import { auth } from 'cloud-storage-connector';
+import { auth } from '@stanfordspezi/cloud-storage-connector';
 
 const AuthContext = React.createContext();
 
@@ -20,7 +20,7 @@ export function AuthProvider({ children }) {
    const [loading, setLoading] = useState(true);
 
 
-   const handleSignUp = async (email, password, setMessage) => {
+   const handleSignUp = async (email: string, password: string, setMessage: Function) => {
       try {
          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
          const user = userCredential.user;
@@ -32,7 +32,7 @@ export function AuthProvider({ children }) {
       }
    };
 
-   const handleSignIn = async (email, password, router, setLoggedInUser, setMessage) => {
+   const handleSignIn = async (email: string, password: string, router, setLoggedInUser: Function, setMessage: Function) => {
       try {
          const userCredential = await signInWithEmailAndPassword(auth, email, password);
          const user = userCredential.user;
@@ -56,11 +56,11 @@ export function AuthProvider({ children }) {
    };
 
 
-   const resetPassword = (email) => sendPasswordResetEmail(auth, email);
+   const resetPassword = (email: string) => sendPasswordResetEmail(auth, email);
 
-   const updateEmail = (email) => currentUser.updateEmail(email);
+   const updateEmail = (email: string) => currentUser.updateEmail(email);
 
-   const updatePassword = (password) => currentUser.updatePassword(password);
+   const updatePassword = (password: string) => currentUser.updatePassword(password);
 
    useEffect(() => {
       const unsubscribe = auth.onAuthStateChanged((user) => {

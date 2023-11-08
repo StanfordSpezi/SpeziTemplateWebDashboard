@@ -1,3 +1,23 @@
+//
+// This source file is part of the Stanford Spezi Template Web Dashboard open-source project
+//
+// SPDX-FileCopyrightText: 2023 Stanford University and the project authors (see CONTRIBUTORS.md)
+//
+// SPDX-License-Identifier: MIT
+//
+
+/**
+ * Docs for Example module
+ * @packageDocumentation
+ */
+
+/**
+ * Docs for `createLoginRegister` function.
+ */
+
+
+
+import React from 'react';
 import { useRef, useState } from 'react';
 import GoogleSignIn from './GoogleSignIn';
 import { useRouter } from 'next/router'
@@ -15,8 +35,10 @@ import {
 } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-// Combined login-register component using email/password
-export default function FirebaseLogin() {
+export { AuthProvider } from "./contexts/AuthContext"
+
+// Combined login-register component 
+export function UserLoginRegister({includeGoogle} ) {
   const [message, setMessage] = useState(null);
   const [logInScreen, changeToLogInScreen] = useState(true);
   const [firstName, changeFirstName] = useState("");
@@ -147,7 +169,7 @@ export default function FirebaseLogin() {
               >
                 {logInScreen === true ? "Sign In" : "Sign Up"}
               </Button>
-              <GoogleSignIn></GoogleSignIn>
+              {includeGoogle === true ? <GoogleSignIn></GoogleSignIn> : null}
               <Typography variant="caption" color="success">{message}</Typography>
               <Grid container>
                 <Grid item>

@@ -19,7 +19,6 @@ import { DataGrid } from '@mui/x-data-grid';
 import { Typography, Button, Stack } from '@mui/material';
 import Link from 'next/link';
 
-
 type Patient = {
   firstName: string;
   lastName: string;

@@ -22,12 +22,16 @@
     "paths": {
       "@stanfordspezi/example-package": ["./packages/example-package/dist"],
       "@stanfordspezi/cloud-storage-connector": ["./packages/cloud-storage-connector/dist"],
-      "@stanfordspezi/cloud-patient-list": ["./packages/patient-list/dist"],
+      "@stanfordspezi/patient-list": ["./packages/patient-list/dist"],
+      "@stanfordspezi/user-login-register": ["./packages/user-login-register/dist"],
+      "@stanfordspezi/smart-on-fhir-connector": ["./packages/smart-on-fhir-connector/dist"],
+
+
 
 
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "packages/user-login-register/src/GoogleSignIn.tsx", "packages/cloud-storage-connector/src/firebase.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "packages/user-login-register/src/GoogleSignIn.tsx"],
   "exclude": ["node_modules"],
   "typedocOptions": {
     "entryPoints": ["packages/*"],
