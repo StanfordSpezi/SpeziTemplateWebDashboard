@@ -20,10 +20,14 @@
       }
     ],
     "paths": {
-      "@stanfordspezi/example-package": ["./packages/example-package/dist"]
+      "@stanfordspezi/example-package": ["./packages/example-package/dist"],
+      "@stanfordspezi/cloud-storage-connector": ["./packages/cloud-storage-connector/dist"],
+      "@stanfordspezi/cloud-patient-list": ["./packages/patient-list/dist"],
+
+
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "packages/user-login-register/src/GoogleSignIn.tsx", "packages/cloud-storage-connector/src/firebase.ts"],
   "exclude": ["node_modules"],
   "typedocOptions": {
     "entryPoints": ["packages/*"],

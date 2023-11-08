@@ -8,12 +8,14 @@
 
 import Image from 'next/image'
 import { generateGreeting } from '@stanfordspezi/example-package'
+import Header from './components/Header'
 
 export default function Home() {
   const greeting = generateGreeting()
 
   return (
     <div className="container">
+      <Header></Header>
       <Image
         src={`${process.env.basePath || ''}/stanfordspezi.png`}
         alt="Stanford Spezi Logo"

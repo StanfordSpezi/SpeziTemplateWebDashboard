@@ -1,0 +1,15 @@
+{
+  "name": "@stanfordspezi/cloud-storage-connector",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@firebase/firestore": "^4.3.0",
+    "firebase": "^10.5.0",
+    "react": "^18.2.0"
+  }
+}
