@@ -10,7 +10,7 @@ SPDX-License-Identifier: MIT
 
 import { useEffect } from "react";
 import FHIR from "fhirclient";
-import Loading from '../../packages/smart-on-fhir-connector/src/Loading';
+import Loading from '../components/Loading';
 
 export default function Launcher() {
     useEffect(() => {

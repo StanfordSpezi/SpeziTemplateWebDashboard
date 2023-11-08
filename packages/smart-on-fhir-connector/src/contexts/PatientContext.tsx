@@ -11,7 +11,7 @@ SPDX-License-Identifier: MIT
 import React = require('react');
 import { useState, useEffect, createContext, useContext, ReactNode } from 'react';
 import { useFHIRClient } from './FHIRClientContext';
-import Loading from "../Loading";
+import Loading from "../../../../app/components/Loading";
 import Client from 'fhirclient/lib/Client'
 import { Patient } from 'fhir/r4';
 

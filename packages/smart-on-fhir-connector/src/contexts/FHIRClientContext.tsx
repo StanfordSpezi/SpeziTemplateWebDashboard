@@ -12,7 +12,7 @@ import React = require('react');
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import FHIR from "fhirclient";
-import Loading from '../Loading';
+import Loading from '../../../../app/components/Loading';
 import Client from 'fhirclient/lib/Client';
 
 interface FHIRClientProviderProps {
