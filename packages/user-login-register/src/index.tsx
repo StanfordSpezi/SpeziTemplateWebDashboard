@@ -35,6 +35,7 @@ import {
 } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+export {useAuth} from './contexts/AuthContext';
 export { AuthProvider } from "./contexts/AuthContext"
 
 // Combined login-register component 
@@ -53,7 +54,6 @@ export function UserLoginRegister({includeGoogle} ) {
   const router = useRouter();
 
   const { handleSignIn, handleSignUp } = useAuth();
-
   return (
     <ThemeProvider theme={defaultTheme}>
       <Grid container component="main" sx={{ height: '60vh', width: '100vh' }}>
