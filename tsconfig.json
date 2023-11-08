@@ -31,7 +31,7 @@
 
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "packages/user-login-register/src/GoogleSignIn.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "packages/user-login-register/src/GoogleSignIn.tsx", "packages/cloud-storage-connector/src/firebase.ts"],
   "exclude": ["node_modules"],
   "typedocOptions": {
     "entryPoints": ["packages/*"],

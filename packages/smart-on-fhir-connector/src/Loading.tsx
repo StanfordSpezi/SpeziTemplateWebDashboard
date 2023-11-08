@@ -7,7 +7,7 @@ SPDX-FileCopyrightText: 2023 Stanford University and the project authors (see CO
 SPDX-License-Identifier: MIT
    
 */
-
+import React from 'react';
 import { Container, Row, Spinner } from 'react-bootstrap';
 // import logo from '../public/spezi_logo.png';
 

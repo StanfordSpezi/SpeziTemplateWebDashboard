@@ -8,7 +8,7 @@ import {
 
 import { auth } from '@stanfordspezi/cloud-storage-connector';
 
-const AuthContext = React.createContext();
+const AuthContext = React.createContext<any>(undefined);
 
 export function useAuth() {
    return useContext(AuthContext);

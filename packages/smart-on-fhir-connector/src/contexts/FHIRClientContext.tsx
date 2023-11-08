@@ -9,10 +9,9 @@ SPDX-License-Identifier: MIT
 */
 
 import React = require('react');
-
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import FHIR from "fhirclient";
-import Loading from '../../../../app/components/Loading';
+import Loading from "../Loading";
 import Client from 'fhirclient/lib/Client';
 
 interface FHIRClientProviderProps {
