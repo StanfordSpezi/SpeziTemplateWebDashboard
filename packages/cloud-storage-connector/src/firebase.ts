@@ -2,15 +2,6 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from '@firebase/firestore';
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDuJ2OpX6YtD1RZiwE3FwuWzW10NezS7sU", // process.env.FIREBASE_API_KEY
-//   authDomain: "spezi-dashboard-development.firebaseapp.com",
-//   projectId: "spezi-dashboard-development",
-//   storageBucket: "spezi-dashboard-development.appspot.com",
-//   messagingSenderId: "382922669553",
-//   appId: "1:382922669553:web:1dbad658ccc5fba8561850"
-// };
-
 const firebaseConfig = {
    apiKey: process.env.FIREBASE_API_KEY,
    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
