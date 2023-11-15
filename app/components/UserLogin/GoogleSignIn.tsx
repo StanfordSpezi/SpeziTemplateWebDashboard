@@ -1,6 +1,6 @@
 import React from 'react';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import GoogleButton from 'react-google-button';
 
 export default function GoogleSignIn(){

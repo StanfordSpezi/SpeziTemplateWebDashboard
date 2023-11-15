@@ -17,7 +17,7 @@
 import React from 'react';
 import { useRef, useState } from 'react';
 import GoogleSignIn from './GoogleSignIn';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 import {
   Avatar,

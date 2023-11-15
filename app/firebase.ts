@@ -13,7 +13,8 @@ const firebaseConfig = {
    appId: process.env.FIREBASE_APP_ID
  };
 
- 
+
+
 console.log("apiKey", firebaseConfig.apiKey);
 
 const app = initializeApp(firebaseConfig);
