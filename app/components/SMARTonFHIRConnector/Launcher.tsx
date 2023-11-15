@@ -8,6 +8,8 @@ SPDX-License-Identifier: MIT
    
 */
 
+'use client'
+
 import React from 'react';
 import { useEffect } from "react";
 import FHIR from "fhirclient";
