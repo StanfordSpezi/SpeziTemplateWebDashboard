@@ -1,3 +1,4 @@
+'use client'
 
 import React, { useContext, useState, useEffect, useMemo } from 'react';
 import {
@@ -6,9 +7,10 @@ import {
    signOut,
    sendPasswordResetEmail,
 } from 'firebase/auth';
+import { NextRouter } from 'next/router';
 
-import { auth } from '@stanfordspezi/cloud-storage-connector';
 
+import { auth } from '../firebase';
 const AuthContext = React.createContext<any>(undefined);
 
 export function useAuth() {
@@ -33,7 +35,7 @@ export function AuthProvider({ children }) {
       }
    };
 
-   const handleSignIn = async (email: string, password: string, router, setLoggedInUser: Function, setMessage: Function) => {
+   const handleSignIn = async (email: string, password: string, router: NextRouter, setLoggedInUser: Function, setMessage: Function) => {
       try {
          const userCredential = await signInWithEmailAndPassword(auth, email, password);
          const user = userCredential.user;
@@ -46,7 +48,7 @@ export function AuthProvider({ children }) {
       }
    };
 
-   const handleSignOut = async (router) => {
+   const handleSignOut = async (router: NextRouter) => {
       try {
          console.log('User to sign out:', auth.currentUser);
          const userCredential = await signOut(auth);

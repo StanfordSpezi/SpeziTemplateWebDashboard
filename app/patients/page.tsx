@@ -1,7 +1,6 @@
 
-import PatientList from '@stanfordspezi/patient-list'
-
-import { extractPatientsFromFirebase } from '@stanfordspezi/cloud-storage-connector'
+import PatientList from '../components/PatientList';
+import { extractPatientsFromFirebase } from '../components/CloudStorageConnector';
 import { Typography} from '@mui/material';
 import Header from '../components/Header';
 

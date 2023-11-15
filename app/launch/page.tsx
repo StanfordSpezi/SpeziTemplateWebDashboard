@@ -8,7 +8,7 @@ SPDX-License-Identifier: MIT
    
 */
 
-import { Launcher } from "@stanfordspezi/smart-on-fhir-connector";
+import Launcher from "../components/SMARTonFHIRConnector/Launcher";
 
 export default function SMARTonFHIRLauncher() {
     return <Launcher/>;

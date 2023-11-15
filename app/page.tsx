@@ -7,9 +7,9 @@
 //
 
 import Head from 'next/head';
-import {UserLoginRegister, AuthProvider} from '@stanfordspezi/user-login-register'
-// import styles from '../styles/Home.module.css';
+import { UserLoginRegister } from './components/UserLogin';
 import { Typography, Stack } from '@mui/material';
+import { AuthProvider } from './contexts/AuthContext';
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
             }} >
               Welcome to your Dashboard!
             </Typography>
-            <UserLoginRegister includeGoogle="true"></UserLoginRegister>
+            <UserLoginRegister></UserLoginRegister>
           </Stack>
         </main>
       </AuthProvider>
