@@ -20,8 +20,4 @@ module.exports = {
       },
     ],
   },
-  moduleNameMapper: {
-    '^@stanfordspezi/example-package$':
-      '<rootDir>/packages/example-package/dist',
-  },
 }
