@@ -7,13 +7,15 @@
 //
 
 import Head from 'next/head';
-import {  EmailPasswordLogin } from '../components/UserLogin';
+import  EmailPasswordLogin from '../components/UserLogin';
+import styles from '../styles/Home.module.css';
+
 import { Typography, Stack } from '@mui/material';
 import { AuthProvider } from '../contexts/AuthContext';
 
 export default function Home() {
   return (
-    <div>
+    <div className={styles.container}>
       <AuthProvider>
         <Head>
           <title>Spezi Dashboard Template</title>

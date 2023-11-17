@@ -1,5 +1,7 @@
 import { useRef, useState } from 'react';
-import GoogleSignIn from '.';
+import Link from 'next/link';
+// import { handleSignUp, handleSignIn } from './authFunctions';
+import GoogleSignIn from './GoogleSignIn';
 import { useRouter } from 'next/router'
 import { useAuth } from '../../contexts/AuthContext';
 
@@ -16,7 +18,7 @@ import {
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // Combined login-register component using email/password
-export default function EmailPasswordLogin() {
+export default function FirebaseLogin() {
   const [message, setMessage] = useState(null);
   const [logInScreen, changeToLogInScreen] = useState(true);
   const [firstName, changeFirstName] = useState("");

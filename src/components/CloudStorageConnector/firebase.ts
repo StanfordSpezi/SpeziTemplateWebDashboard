@@ -3,22 +3,13 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from '@firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDuJ2OpX6YtD1RZiwE3FwuWzW10NezS7sU", // process.env.FIREBASE_API_KEY
-  authDomain: "spezi-dashboard-development.firebaseapp.com",
-  projectId: "spezi-dashboard-development",
-  storageBucket: "spezi-dashboard-development.appspot.com",
-  messagingSenderId: "382922669553",
-  appId: "1:382922669553:web:1dbad658ccc5fba8561850"
-};
-
-// const firebaseConfig = {
-//    apiKey:  process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-//    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-//    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-//    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-//    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-//    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
-//  };
+   apiKey:  process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+   projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+   storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
+ };
 
 console.log("apiKey", firebaseConfig.apiKey);
 
