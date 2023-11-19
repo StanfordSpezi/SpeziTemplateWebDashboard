@@ -8,6 +8,8 @@
 
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 
+require('dotenv').config();
+
 module.exports = {
   collectCoverage: true,
   preset: 'ts-jest',

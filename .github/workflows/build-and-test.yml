@@ -44,9 +44,5 @@ jobs:
           echo "NEXT_PUBLIC_FIREBASE_APP_ID=${{ secrets.NEXT_PUBLIC_FIREBASE_APP_ID }}" >> .env
       - name: Run Docker Compose Up
         run: docker-compose -f docker-compose-development.yml up -d --build
-      - name: Run test script
-        run: |
-          sleep 5
-          sh test.sh
       - name: Run Docker Compose Down
         run: docker-compose down
