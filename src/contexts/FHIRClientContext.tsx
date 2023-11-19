@@ -8,33 +8,42 @@ SPDX-License-Identifier: MIT
    
 */
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import FHIR from "fhirclient";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from 'react';
+import FHIR from 'fhirclient';
 import Loading from '../components/Loading';
 import Client from 'fhirclient/lib/Client';
 
 interface FHIRClientProviderProps {
-    children: ReactNode;
+  children: ReactNode;
 }
 
 export const FHIRClientContext = createContext<Client | null>(null);
 
 export const useFHIRClient = () => useContext(FHIRClientContext);
 
-export const FHIRClientProvider: React.FC<FHIRClientProviderProps> = ({ children }) => {
+export const FHIRClientProvider: React.FC<FHIRClientProviderProps> = ({
+  children,
+}) => {
+  const [client, setClient] = useState<Client | null>(null);
 
-    const [client, setClient] = useState<Client | null>(null);
+  useEffect(() => {
+    FHIR.oauth2
+      .ready()
+      .then((client: Client) => setClient(client))
+      .catch(console.error);
+  }, []);
 
-    useEffect(() => {
-        FHIR.oauth2.ready()
-            .then((client: Client) => setClient(client))
-            .catch(console.error);
-    }, []);
-
-    return (
-        client ?
-            <FHIRClientContext.Provider value={client}>
-                {children}
-            </FHIRClientContext.Provider>
-            : <Loading />);
-}
+  return client ? (
+    <FHIRClientContext.Provider value={client}>
+      {children}
+    </FHIRClientContext.Provider>
+  ) : (
+    <Loading />
+  );
+};

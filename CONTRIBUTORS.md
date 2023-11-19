@@ -11,3 +11,5 @@ SPDX-License-Identifier: MIT
 # Stanford Spezi Template Web Dashboard Contributors
 
 - [Paul Schmiedmayer](https://github.com/PSchmiedmayer)
+- [Vishnu Ravi](https://github.com/vishnuravi)
+- [Caitlin Kunchur](https://github.com/ckunchur)

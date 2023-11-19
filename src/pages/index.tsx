@@ -9,7 +9,7 @@ SPDX-License-Identifier: MIT
 */
 
 import Head from 'next/head';
-import  EmailPasswordLogin from '../components/UserLogin';
+import EmailPasswordLogin from '../components/UserLogin';
 import styles from '../styles/Home.module.css';
 
 import { Typography, Stack } from '@mui/material';
@@ -25,18 +25,20 @@ export default function Home() {
         </Head>
         <main>
           <Stack spacing={3}>
-            <Typography variant="h4" sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center'
-            }} >
+            <Typography
+              variant="h4"
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
               Welcome to your Dashboard!
             </Typography>
             <EmailPasswordLogin></EmailPasswordLogin>
           </Stack>
         </main>
       </AuthProvider>
-
     </div>
   );
 }

@@ -13,11 +13,10 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import GoogleButton from 'react-google-button';
 
-export default function GoogleSignIn(){
+export default function GoogleSignIn() {
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
   const router = useRouter();
-
 
   const handleSignIn = async () => {
     try {
@@ -32,4 +31,3 @@ export default function GoogleSignIn(){
     <GoogleButton onClick={handleSignIn}>Sign in with Google</GoogleButton>
   );
 }
-
