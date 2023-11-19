@@ -22,8 +22,10 @@ export default function GoogleSignIn() {
     try {
       await signInWithPopup(auth, provider);
       router.push('/patients'); // redirect to patients list
-    } catch (error) {
-      console.error('Google Sign-In Error:', error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error('Google Sign-In Error:', error.message);
+      }
     }
   };
 

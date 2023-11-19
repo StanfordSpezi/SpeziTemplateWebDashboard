@@ -9,8 +9,16 @@ SPDX-License-Identifier: MIT
 */
 
 import { AuthProvider } from '../contexts/AuthContext';
+import { NextPage } from 'next';
+import { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }) {
+interface AppPropsWithLayout extends AppProps {
+  Component: NextPage & {
+    Layout?: React.ComponentType;
+  };
+}
+
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <AuthProvider>
       <Component {...pageProps} />

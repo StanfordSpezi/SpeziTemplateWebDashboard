@@ -20,10 +20,17 @@ import {
   signInWithEmailAndPassword,
   signOut,
   sendPasswordResetEmail,
+  User,
+  updateEmail,
+  updatePassword,
 } from 'firebase/auth';
 
 import { auth } from '../components/CloudStorageConnector/firebase';
 import { NextRouter } from 'next/router';
+
+type AuthProviderProps = {
+  children: React.ReactNode;
+};
 
 const AuthContext = React.createContext<any>(undefined);
 
@@ -31,8 +38,8 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
-export function AuthProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState(null);
+export function AuthProvider({ children }: AuthProviderProps) {
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -50,8 +57,10 @@ export function AuthProvider({ children }) {
       const user = userCredential.user;
       console.log('User signed up:', user);
       setMessage('Account created successfully. Click Sign In.');
-    } catch (error) {
-      console.error('Sign-up failed:', error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error('Sign-up failed:', error.message);
+      }
       setMessage('Sign-up failed. Please try again.');
     }
   };
@@ -74,30 +83,57 @@ export function AuthProvider({ children }) {
       setLoggedInUser(user);
       router.push('/patients');
     } catch (error) {
-      console.error('Sign-in failed:', error.message);
+      if (error instanceof Error) {
+        console.error('Sign-in failed:', error.message);
+      }
       setMessage('Login failed. Please check your email and password.');
     }
   };
 
-  const handleSignOut = async (router: NextRouter) => {
+  const handleSignOut = async (router: NextRouter, setMessage: Function) => {
     try {
       console.log('User to sign out:', auth.currentUser);
       const userCredential = await signOut(auth);
       router.push('/');
-    } catch (error) {
-      console.error('Sign-out failed:', error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error('Sign-out failed:', error.message);
+      }
+      setMessage('Sign-out failed.');
     }
   };
 
   const resetPassword = (email: string) => sendPasswordResetEmail(auth, email);
 
-  const updateEmail = useCallback(
-    (email: string) => currentUser.updateEmail(email),
+  const updateUserEmail = useCallback(
+    async (email: string) => {
+      if (currentUser) {
+        try {
+          await updateEmail(currentUser, email);
+        } catch (error: unknown) {
+          if (error instanceof Error) {
+            console.error('Error updating email:', error.message);
+          }
+        }
+      } else {
+        console.error('No user is currently signed in.');
+      }
+    },
     [currentUser],
   );
 
-  const updatePassword = useCallback(
-    (password: string) => currentUser.updatePassword(password),
+  const updateUserPassword = useCallback(
+    async (password: string) => {
+      if (currentUser) {
+        try {
+          await updatePassword(currentUser, password);
+        } catch (error: unknown) {
+          if (error instanceof Error) {
+            console.error('Error updating password:', error.message);
+          }
+        }
+      }
+    },
     [currentUser],
   );
 
@@ -129,10 +165,10 @@ export function AuthProvider({ children }) {
       handleSignUp,
       handleSignOut,
       resetPassword,
-      updateEmail,
-      updatePassword,
+      updateUserEmail,
+      updateUserPassword,
     }),
-    [currentUser, isAdmin, updateEmail, updatePassword],
+    [currentUser, isAdmin, updateUserEmail, updateUserPassword],
   );
 
   return (
