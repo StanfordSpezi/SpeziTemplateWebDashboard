@@ -28,20 +28,11 @@ jobs:
   testandcoverage:
     name: Test and Coverage
     uses: StanfordBDHG/.github/.github/workflows/npm-test-and-coverage.yml@v2    
-  printenvfile:
-    name: Print ENV_FILE
-    runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Print ENV_FILE
-        run: |
-          echo "Contents of ENV_FILE:"
-          echo "${{ secrets.ENV_FILE }}"
   dockercomposetest:
     name: Docker Compose & Test
     uses: StanfordBDHG/.github/.github/workflows/docker-compose-test.yml@v2
     with:
       dockerComposeFile: docker-compose-development.yml
       testscript: test.sh
+    secrets:
+      ENV_FILE: ${{ secrets.ENV_FILE }}
