@@ -68,42 +68,48 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
   };
 
-  const handleSignIn = async (
-    email: string,
-    password: string,
-    setLoggedInUser: Function,
-    setMessage: Function,
-  ) => {
-    try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password,
-      );
-      const user = userCredential.user;
-      console.log('User signed in:', user);
-      setLoggedInUser(user);
-      router.push('/patients');
-    } catch (error) {
-      if (error instanceof Error) {
-        console.error('Sign-in failed:', error.message);
+  const handleSignIn = useCallback(
+    async (
+      email: string,
+      password: string,
+      setLoggedInUser: Function,
+      setMessage: Function,
+    ) => {
+      try {
+        const userCredential = await signInWithEmailAndPassword(
+          auth,
+          email,
+          password,
+        );
+        const user = userCredential.user;
+        console.log('User signed in:', user);
+        setLoggedInUser(user);
+        router.push('/patients');
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('Sign-in failed:', error.message);
+        }
+        setMessage('Login failed. Please check your email and password.');
       }
-      setMessage('Login failed. Please check your email and password.');
-    }
-  };
+    },
+    [router],
+  );
 
-  const handleSignOut = async (setMessage: Function) => {
-    try {
-      console.log('User to sign out:', auth.currentUser);
-      const userCredential = await signOut(auth);
-      router.push('/');
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        console.error('Sign-out failed:', error.message);
+  const handleSignOut = useCallback(
+    async (setMessage: Function) => {
+      try {
+        console.log('User to sign out:', auth.currentUser);
+        const userCredential = await signOut(auth);
+        router.push('/');
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          console.error('Sign-out failed:', error.message);
+        }
+        setMessage('Sign-out failed.');
       }
-      setMessage('Sign-out failed.');
-    }
-  };
+    },
+    [router],
+  );
 
   const resetPassword = (email: string) => sendPasswordResetEmail(auth, email);
 
@@ -170,7 +176,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
       updateUserEmail,
       updateUserPassword,
     }),
-    [currentUser, isAdmin, updateUserEmail, updateUserPassword],
+    [
+      currentUser,
+      isAdmin,
+      updateUserEmail,
+      updateUserPassword,
+      handleSignIn,
+      handleSignOut,
+    ],
   );
 
   return (
