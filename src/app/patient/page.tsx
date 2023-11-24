@@ -8,6 +8,8 @@ SPDX-License-Identifier: MIT
    
 */
 
+'use client';
+
 import { Typography, Paper } from '@mui/material';
 import Header from '../components/Header';
 import { useRouter } from 'next/router';

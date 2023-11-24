@@ -8,12 +8,14 @@ SPDX-License-Identifier: MIT
    
 */
 
+'use client';
+
 import { useRef, useState } from 'react';
 import Link from 'next/link';
 // import { handleSignUp, handleSignIn } from './authFunctions';
 import GoogleSignIn from './GoogleSignIn';
-import { useRouter } from 'next/router';
-import { useAuth } from '../../contexts/AuthContext';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '../../../contexts/AuthContext';
 
 import {
   Avatar,

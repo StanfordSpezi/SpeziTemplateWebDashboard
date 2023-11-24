@@ -8,6 +8,8 @@ SPDX-License-Identifier: MIT
    
 */
 
+'use client';
+
 import { Container, Row, Spinner } from 'react-bootstrap';
 // import logo from '../public/spezi_logo.png';
 

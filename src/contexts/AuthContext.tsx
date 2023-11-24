@@ -7,6 +7,7 @@ SPDX-FileCopyrightText: 2023 Stanford University and the project authors (see CO
 SPDX-License-Identifier: MIT
    
 */
+'use client';
 
 import React, {
   useContext,
@@ -25,8 +26,8 @@ import {
   updatePassword,
 } from 'firebase/auth';
 
-import { auth } from '../components/CloudStorageConnector/firebase';
-import { NextRouter } from 'next/router';
+import { auth } from '../app/components/CloudStorageConnector/firebase';
+import { useRouter } from 'next/navigation';
 
 type AuthProviderProps = {
   children: React.ReactNode;
@@ -42,6 +43,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  const router = useRouter();
 
   const handleSignUp = async (
     email: string,
@@ -68,7 +71,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const handleSignIn = async (
     email: string,
     password: string,
-    router: NextRouter,
     setLoggedInUser: Function,
     setMessage: Function,
   ) => {
@@ -90,7 +92,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
   };
 
-  const handleSignOut = async (router: NextRouter, setMessage: Function) => {
+  const handleSignOut = async (setMessage: Function) => {
     try {
       console.log('User to sign out:', auth.currentUser);
       const userCredential = await signOut(auth);

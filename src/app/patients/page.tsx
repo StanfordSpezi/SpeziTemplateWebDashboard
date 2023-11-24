@@ -8,6 +8,8 @@ SPDX-License-Identifier: MIT
    
 */
 
+'use client';
+
 import PatientList from '../components/PatientList';
 import { ExtractPatientsFromFirebase } from '../components/CloudStorageConnector';
 import { Typography } from '@mui/material';

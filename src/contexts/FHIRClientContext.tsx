@@ -16,7 +16,7 @@ import {
   ReactNode,
 } from 'react';
 import FHIR from 'fhirclient';
-import Loading from '../components/Loading';
+import Loading from '../app/components/Loading';
 import Client from 'fhirclient/lib/Client';
 
 interface FHIRClientProviderProps {
