@@ -12,12 +12,15 @@ SPDX-License-Identifier: MIT
 
 import { Typography, Paper } from '@mui/material';
 import Header from '../components/Header';
-import { useRouter } from 'next/router';
+import { useRouter, useSearchParams } from 'next/navigation';
+import withAuth from '../components/Auth/withAuth';
 
 // placeholder page to store data modules for selected patient
-export default function PatientsPage() {
+const PatientsPage = () => {
   const router = useRouter();
-  const { id } = router.query;
+  const params = useSearchParams();
+  const id = params.get('id');
+
   return (
     <div>
       <Header></Header>
@@ -31,4 +34,6 @@ export default function PatientsPage() {
       </div>
     </div>
   );
-}
+};
+
+export default withAuth(PatientsPage, '/');
