@@ -8,17 +8,31 @@ SPDX-License-Identifier: MIT
    
 */
 
+'use client';
+
 import Head from 'next/head';
 import EmailPasswordLogin from './components/UserLogin';
 import styles from '../styles/Home.module.css';
+import { useEffect } from 'react';
+import { useAuth } from '../contexts/AuthContext';
+import { useRouter } from 'next/navigation';
 
 import { Typography, Stack } from '@mui/material';
 
 export default function Home() {
+  const { currentUser } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (currentUser) {
+      router.push('/patients');
+    }
+  }, [currentUser, router]);
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Spezi Dashboard Template</title>
+        <title>Spezi Template Web Dashboard</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
@@ -33,7 +47,7 @@ export default function Home() {
           >
             Welcome to your Dashboard!
           </Typography>
-          <EmailPasswordLogin></EmailPasswordLogin>
+          <EmailPasswordLogin />
         </Stack>
       </main>
     </div>
