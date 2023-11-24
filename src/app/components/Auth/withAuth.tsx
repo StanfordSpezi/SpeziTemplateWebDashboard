@@ -12,7 +12,10 @@ import React, { ComponentType, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '../../../contexts/AuthContext';
 
-const withAuth = <P extends object>(WrappedComponent: ComponentType<P>, redirectTo: string = '/') => {
+const withAuth = <P extends object>(
+  WrappedComponent: ComponentType<P>,
+  redirectTo: string = '/',
+) => {
   return function WithAuthComponent(props: P) {
     const { currentUser } = useAuth();
     const router = useRouter();
@@ -21,7 +24,7 @@ const withAuth = <P extends object>(WrappedComponent: ComponentType<P>, redirect
       if (!currentUser) {
         router.push(redirectTo);
       }
-    }, [currentUser, router, redirectTo]);
+    }, [currentUser, router]);
 
     return currentUser ? <WrappedComponent {...props} /> : null;
   };
