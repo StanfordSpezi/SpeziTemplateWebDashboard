@@ -12,7 +12,6 @@ SPDX-License-Identifier: MIT
 
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
-import Link from 'next/link';
 import { useAuth } from '../../contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 

@@ -11,7 +11,7 @@ SPDX-License-Identifier: MIT
 'use client';
 
 import Head from 'next/head';
-import EmailPasswordLogin from './components/UserLogin';
+import EmailPasswordLogin from './components/Auth';
 import styles from '../styles/Home.module.css';
 import { useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
