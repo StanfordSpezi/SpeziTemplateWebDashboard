@@ -12,6 +12,7 @@ SPDX-License-Identifier: MIT
 
 import { useState } from 'react';
 import GoogleSignIn from './GoogleSignIn';
+import StanfordSSO from './StanfordSSO';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '../../../contexts/AuthContext';
 
@@ -178,6 +179,8 @@ export default function FirebaseLogin() {
                 {logInScreen === true ? 'Sign In' : 'Sign Up'}
               </Button>
               <GoogleSignIn></GoogleSignIn>
+              <StanfordSSO></StanfordSSO>
+              
               <Typography variant="caption" color="success">
                 {message}
               </Typography>
