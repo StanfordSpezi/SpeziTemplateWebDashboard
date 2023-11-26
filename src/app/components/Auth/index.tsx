@@ -180,7 +180,7 @@ export default function FirebaseLogin() {
               </Button>
               <GoogleSignIn></GoogleSignIn>
               <StanfordSSO></StanfordSSO>
-              
+
               <Typography variant="caption" color="success">
                 {message}
               </Typography>
