@@ -27,10 +27,12 @@ jobs:
       checks: write
   testandcoverage:
     name: Test and Coverage
-    uses: StanfordBDHG/.github/.github/workflows/npm-test-and-coverage.yml@v2
+    uses: StanfordBDHG/.github/.github/workflows/npm-test-and-coverage.yml@v2    
   dockercomposetest:
     name: Docker Compose & Test
     uses: StanfordBDHG/.github/.github/workflows/docker-compose-test.yml@v2
     with:
       dockerComposeFile: docker-compose-development.yml
       testscript: test.sh
+    secrets:
+      ENV_FILE: ${{ secrets.ENV_FILE }}

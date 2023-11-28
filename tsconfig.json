@@ -2,7 +2,11 @@
   "compilerOptions": {
     "composite": true,
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -18,17 +22,16 @@
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@stanfordspezi/example-package": ["./packages/example-package/dist"]
-    }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"],
-  "typedocOptions": {
-    "entryPoints": ["packages/*"],
-    "name": "Stanford Spezi Template Web Dashboard",
-    "entryPointStrategy": "packages",
-    "includeVersion": false
-  }
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

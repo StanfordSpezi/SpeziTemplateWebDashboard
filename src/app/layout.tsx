@@ -6,27 +6,29 @@
 // SPDX-License-Identifier: MIT
 //
 
-import type { Metadata } from 'next'
-import type { ReactNode } from 'react'
-import './globals.css'
+import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
+import { AuthProvider } from '../contexts/AuthContext';
 
 export const metadata: Metadata = {
   title: 'Stanford Spezi Template Web Dashboard',
   description: 'Stanford Spezi Template Web Dashboard',
-}
+};
 
 interface RootLayoutProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AuthProvider>{children}</AuthProvider>
+      </body>
     </html>
-  )
+  );
 }

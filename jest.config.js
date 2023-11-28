@@ -8,6 +8,8 @@
 
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 
+require('dotenv').config();
+
 module.exports = {
   collectCoverage: true,
   preset: 'ts-jest',
@@ -20,8 +22,4 @@ module.exports = {
       },
     ],
   },
-  moduleNameMapper: {
-    '^@stanfordspezi/example-package$':
-      '<rootDir>/packages/example-package/dist',
-  },
-}
+};
