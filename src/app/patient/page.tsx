@@ -14,8 +14,8 @@ import { Typography, Paper } from '@mui/material';
 import Header from '../components/Header';
 import { useRouter, useSearchParams } from 'next/navigation';
 import withAuth from '../components/Auth/withAuth';
+import TabbedInterface from '../components/TabbedInterface';
 
-// placeholder page to store data modules for selected patient
 const PatientsPage = () => {
   const router = useRouter();
   const params = useSearchParams();
@@ -30,7 +30,7 @@ const PatientsPage = () => {
         <Typography sx={{ display: 'flex', justifyContent: 'center' }}>
           Viewing data for patient {id}
         </Typography>
-        <Paper elevation={6} sx={{ flex: 1, margin: 4 }}></Paper>
+        <TabbedInterface></TabbedInterface>
       </div>
     </div>
   );
