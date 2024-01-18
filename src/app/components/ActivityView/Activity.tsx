@@ -43,6 +43,7 @@ const Activity: React.FC<ActivityProps> = ({ observationData }) => {
         }
     };
 
+    // Functions below attempt to enable per-hour data if a single bar is clicked (unused)
     const handleDaySelected = (selectedDate: Date) => {
         setSelectionMode('single');
         setStart(selectedDate);
@@ -50,8 +51,6 @@ const Activity: React.FC<ActivityProps> = ({ observationData }) => {
         nextDay.setDate(nextDay.getDate() + 1);
         setEnd(nextDay);
     };
-    
-
     const handleModeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newMode = event.target.value;
         setSelectionMode(newMode);
@@ -65,31 +64,42 @@ const Activity: React.FC<ActivityProps> = ({ observationData }) => {
         }
     };
     return (
-        <Card className="p-2 m-2 d-flex flex-column align-items-center justify-content-center shadow">
-    <Typography>Steps</Typography>
-    <Typography variant="caption">Data is aggregated by default. Click on a bar for hourly data</Typography>
+        <Card
+            sx={{
+                p: 2,
+                m: 2,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                boxShadow: 3,
+            }}
+        >
+            <Typography className="lead">Steps</Typography>
+            <Typography variant="caption">Data is aggregated per day by default.
+                Select single day to view hourly data.
+            </Typography>
 
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', marginBottom: '20px' }}>
-        <RadioGroup row value={selectionMode} onChange={(e) => setSelectionMode(e.target.value)}>
-            <FormControlLabel value="single" control={<Radio />} label="Select a Day" />
-            <FormControlLabel value="range" control={<Radio />} label="Select a Date Range" />
-        </RadioGroup>
-        <div style={{ display: 'flex' }}>
-            <DatePicker selected={start} onChange={handleDateChange} />
-            {selectionMode === 'range' && (
-                <>
-                    <div style={{ margin: '0 10px' }}>to</div>
-                    <DatePicker selected={end} onChange={date => setEnd(date)} />
-                </>
-            )}
-        </div>
-    </div>
-    <StepCountChart 
-        observations={observationData} 
-        startDate={start ?? new Date()} 
-        endDate={end ?? new Date()} 
-    />
-</Card>
+            <div style={{ display: 'flex', justifyContent: 'flex-end',  marginBottom: '20px', flexDirection: 'column' }}>
+                <RadioGroup row value={selectionMode} onChange={(e) => setSelectionMode(e.target.value)}>
+                    <FormControlLabel value="single" control={<Radio />} label="Select a Day" />
+                    <FormControlLabel value="range" control={<Radio />} label="Select a Date Range" />
+                </RadioGroup>
+                <div style={{ display: 'flex' }}>
+                    <DatePicker selected={start} onChange={handleDateChange} />
+                    {selectionMode === 'range' && (
+                        <>
+                            <div style={{ margin: '0 10px' }}>to</div>
+                            <DatePicker selected={end} onChange={date => setEnd(date)} />
+                        </>
+                    )}
+                </div>
+            </div>
+            <StepCountChart
+                observations={observationData}
+                startDate={start ?? new Date()}
+                endDate={end ?? new Date()}
+            />
+        </Card>
 
     )
 };

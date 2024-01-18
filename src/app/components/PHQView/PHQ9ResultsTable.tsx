@@ -1,5 +1,4 @@
 import { useState } from 'react';
-// import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { BundleEntry, QuestionnaireResponse } from 'fhir/r4'
 import Table from '@mui/material/Table';
@@ -9,13 +8,21 @@ import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-
+// import { transferGCSDataToFirestore } from './PHQHelpers';
+import {extractPHQ9JSON} from './PHQHelpers'
+import phq9questions from '../../data/phq9questions.json';
+import { Card, Typography, Stack, withStyles } from '@mui/material';
 
 interface PHQ9ResultsTableProps {
+
   responses: BundleEntry<QuestionnaireResponse>[];
 }
 
 const PHQ9ResultsTable: React.FC<PHQ9ResultsTableProps> = ({ responses }) => {
+  console.log("responses",responses);
+  const {questionOptions, answerOptions} = extractPHQ9JSON(phq9questions);
+
+  // console.log("questions", extractPHQ9JSON(phq9questions));
   const itemsPerPage = 5;
   const [currentPage, setCurrentPage] = useState(0);
   const [sortOrder, setSortOrder] = useState('desc');
@@ -58,16 +65,20 @@ const PHQ9ResultsTable: React.FC<PHQ9ResultsTableProps> = ({ responses }) => {
   const paginatedResponses = sortedResponses.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
   const numberOfPages = Math.ceil(responses.length / itemsPerPage);
 
+
+ 
   return (
-    <div>
-   <Table>
+    <Stack>
+     
+      
+   <Table >
   <TableHead>
     <TableRow>
       <TableCell onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
         Date {sortOrder === 'asc' ? <ArrowUpwardIcon /> : <ArrowDownwardIcon />}
       </TableCell>
-      {questionNames.map((name, index) => (
-        <TableCell key={index}>{name}</TableCell>
+      {questionOptions.map((option, index) => (
+        <TableCell key={index}>{option.linkId}</TableCell>
       ))}
       <TableCell>Total</TableCell>
       <TableCell>Interpretation</TableCell>
@@ -107,7 +118,33 @@ const PHQ9ResultsTable: React.FC<PHQ9ResultsTableProps> = ({ responses }) => {
           </Button>
         ))}
       </div>
-    </div>
+    
+      <Stack direction="row">
+      <Stack spacing={2} padding={2} width="70%">
+      <Typography>Question Key</Typography>
+        <Card sx={{ padding: 2 }}>
+        {questionOptions.map((question) => (
+        <Typography variant="subtitle2" key={question.linkId}>
+          {question.linkId}: {question.text}
+        </Typography>
+      ))}
+        </Card>
+      </Stack>
+
+      <Stack spacing={2} padding={2} width="30%">
+          <Typography>Answer Key</Typography>
+        <Card sx={{ padding: 2 }}>
+        {answerOptions.map((answer) => (
+        <Typography variant="subtitle2" key={answer.valueDecimal}>
+          {answer.valueDecimal}: {answer.display}
+        </Typography>
+      ))}
+        </Card>
+      </Stack>
+      </Stack>
+
+
+    </Stack>
   );
 };
 
