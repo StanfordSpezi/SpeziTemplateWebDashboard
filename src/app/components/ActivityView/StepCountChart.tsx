@@ -33,7 +33,7 @@ const StepCountChart: React.FC<StepCountChartProps> = ({ observations, startDate
     let formattedDate;
 
 
-    // Logic for redisplaying single day data on hourly distribution (unused)
+    // Logic for redisplaying single day data on hourly distribution 
     const oneDayInMs = 24 * 60 * 60 * 1000;
     const isSingleDay = endDate.getTime() - startDate.getTime() <= oneDayInMs;
     if (isSingleDay) {
