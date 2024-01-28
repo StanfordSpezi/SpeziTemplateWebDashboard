@@ -8,12 +8,13 @@ SPDX-License-Identifier: MIT
    
 */
 
-import { useRef, useState } from 'react';
-import Link from 'next/link';
-// import { handleSignUp, handleSignIn } from './authFunctions';
+'use client';
+
+import { useState } from 'react';
 import GoogleSignIn from './GoogleSignIn';
-import { useRouter } from 'next/router';
-import { useAuth } from '../../contexts/AuthContext';
+import StanfordSSO from './StanfordSSO';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '../../../contexts/AuthContext';
 
 import {
   Avatar,
@@ -178,6 +179,8 @@ export default function FirebaseLogin() {
                 {logInScreen === true ? 'Sign In' : 'Sign Up'}
               </Button>
               <GoogleSignIn></GoogleSignIn>
+              <StanfordSSO></StanfordSSO>
+
               <Typography variant="caption" color="success">
                 {message}
               </Typography>

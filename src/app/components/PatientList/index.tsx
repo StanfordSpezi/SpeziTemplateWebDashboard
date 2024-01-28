@@ -8,6 +8,8 @@ SPDX-License-Identifier: MIT
    
 */
 
+'use client';
+
 import React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { Typography, Button, Stack } from '@mui/material';
@@ -34,10 +36,12 @@ export default function PatientList({ rows }: PatientList) {
     renderCell?: (params: { row: Patient }) => JSX.Element;
   }[] = [];
 
-  Object.keys(rows[0]).forEach((key) => {
-    console.log(key);
-    columns.push({ field: key, headerName: key, type: 'string' });
-  });
+  if (rows && rows.length > 0) {
+    Object.keys(rows[0]).forEach((key) => {
+      console.log(key);
+      columns.push({ field: key, headerName: key, type: 'string' });
+    });
+  }
 
   // add button to link to patient's data dashboard
   columns.push({

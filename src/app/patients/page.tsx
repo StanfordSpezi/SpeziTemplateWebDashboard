@@ -8,14 +8,18 @@ SPDX-License-Identifier: MIT
    
 */
 
+'use client';
+
 import PatientList from '../components/PatientList';
 import { ExtractPatientsFromFirebase } from '../components/CloudStorageConnector';
 import { Typography } from '@mui/material';
 import Header from '../components/Header';
+import withAuth from '../components/Auth/withAuth';
 
 // display list of patients from Firebase in table
-export default function PatientsPage() {
+const PatientsPage = () => {
   const { patientList, loading } = ExtractPatientsFromFirebase();
+
   return (
     <div>
       <Header></Header>
@@ -26,4 +30,6 @@ export default function PatientsPage() {
       )}
     </div>
   );
-}
+};
+
+export default withAuth(PatientsPage, '/');

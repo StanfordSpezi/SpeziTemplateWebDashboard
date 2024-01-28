@@ -8,11 +8,12 @@ SPDX-License-Identifier: MIT
    
 */
 
+'use client';
+
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
-import Link from 'next/link';
-import { useAuth } from '../contexts/AuthContext';
-import { useRouter } from 'next/router';
+import { useAuth } from '../../contexts/AuthContext';
+import { useRouter } from 'next/navigation';
 
 // TO DO: include currentUser's name next to log out button
 export default function Header() {

@@ -7,6 +7,7 @@ SPDX-FileCopyrightText: 2023 Stanford University and the project authors (see CO
 SPDX-License-Identifier: MIT
    
 */
+'use client';
 
 import React from 'react';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
